@@ -46,9 +46,7 @@ class _BNBState extends State<BNB> {
             icon: const Icon(Icons.store_mall_directory_outlined),
             title: const Text("Store"),
             selectedColor: const Color.fromARGB(255, 232, 80, 91),
-
           ),
-
           SalomonBottomBarItem(
             icon: const Icon(Icons.qr_code_scanner_rounded),
             title: const Text("QR"),
@@ -64,16 +62,7 @@ class _BNBState extends State<BNB> {
             title: const Text("Invoices"),
             selectedColor: const Color(0xff263238),
           ),
-           SalomonBottomBarItem(
-            icon: const Icon(Icons.attach_money),
-            title: const Text("Invoices"),
-            selectedColor: const Color(0xff263238),
-          ),
-             SalomonBottomBarItem(
-            icon: const Icon(Icons.attach_money),
-            title: const Text("Invoices"),
-            selectedColor: const Color(0xff263238),
-          ),
+       
         ],
       ),
       ),
