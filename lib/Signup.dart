@@ -82,7 +82,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 child: Image(
                   width: 150,
                   height: 150,
-                  image: Svg("images/Illustrations/400.svg"),
+                  image: Svg("images/18407478_5995227.svg"),
                 ),
                 
               ),
