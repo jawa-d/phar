@@ -62,7 +62,7 @@ class _LoginPageState extends State<LoginPage2> {
                 child: Image(
                   width: 150,
                   height: 150,
-                  image: Svg("images/Illustrations/7191136_3568982.svg"),
+                  image: Svg("images/13955738_5416078.svg"),
                 ),
               ),
               const SizedBox(height: 20),
