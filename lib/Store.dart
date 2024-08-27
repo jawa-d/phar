@@ -115,23 +115,23 @@ class _StoreState extends State<Store> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     myPanadolCard(
-                      image: "images/Illustrations/homeWelcome.svg",
+                      image: "images/21532495_6463385.svg",
                       text: "Skin Care",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/18407478_5995227.svg",
                       text: "Brain Section",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/15577656_5642613.svg",
                       text: "Sex Medication",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/13955738_5416078.svg",
                       text: "Advil",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/7230627_3588966.svg",
                       text: "Aspirin",
                     ),
                   ],
@@ -155,23 +155,23 @@ class _StoreState extends State<Store> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/Tropex.jpg",
                       text: "Panadol 500 mg",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/shopping-bag.png",
                       text: "Paracetamol 500 mg",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Vyndaqel 20 mg",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Onpattro",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Excedrin",
                     ),
                   ],
@@ -193,23 +193,23 @@ class _StoreState extends State<Store> {
                   scrollDirection: Axis.horizontal,
                   children: [
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Oxlumo 94.5 mg",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Paracetamol 500 mg",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Givlaari 189 mg/ml",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Sudafed",
                     ),
                     myPanadolCard(
-                      image: "images/Illustrations/7191136_3568982.svg",
+                      image: "images/NoResult.svg",
                       text: "Onpattro",
                     ),
                   ],
@@ -218,20 +218,20 @@ class _StoreState extends State<Store> {
               const SizedBox(height: 20),
             ],
           ),
-          Positioned(
-            top: kToolbarHeight, // Position below AppBar
-            left: 0,
-            child: Container(
-              width: 150, // Adjust the width as needed
-              height: 100,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: Svg("images/Illustrations/homeWelcome.svg"),
-                  fit: BoxFit.cover,
-                ),
-              ),
-            ),
-          ),
+          // Positioned(
+          //   top: kToolbarHeight, // Position below AppBar
+          //   left: 0,
+          //   child: Container(
+          //     width: 150, // Adjust the width as needed
+          //     height: 100,
+          //     decoration: BoxDecoration(
+          //       image: DecorationImage(
+          //         image: Svg("images/storeWelcome.svg"),
+          //         fit: BoxFit.cover,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
       bottomNavigationBar: SalomonBottomBar(
