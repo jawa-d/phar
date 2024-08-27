@@ -29,7 +29,7 @@ class _MyWidgetState extends State<Homepage> {
                 const Image(
                   width: 370,
                   height: 450,
-                  image: Svg("images/storeWelcome.svg"),
+                  image: Svg("images/13955738_5416078.svg"),
                 ),
                 RichText(
                   textAlign: TextAlign.center,

@@ -96,18 +96,19 @@ class _HomePageState extends State<Homepage2> {
                 child: Image(
                   width: 370,
                   height: 450,
-                  image: Svg("images/Illustrations/7191136_3568982.svg"),
+                  image: Svg("images/13955738_5416078.svg"),
                 ),
               ),
             ],
           ),
           const SizedBox(height: 20),
-          const Text("All Products", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)
-          
-          ),
-           const Text("See all", style: TextStyle(fontSize: 18 , fontWeight: FontWeight.bold)
-          
-          ),
+          Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  const Text("See all", style: TextStyle(fontSize: 15)),
+                ],
+              ),
           SizedBox(
             height: 300,
             child: ListView(
@@ -115,34 +116,36 @@ class _HomePageState extends State<Homepage2> {
               scrollDirection: Axis.horizontal,
               children: [
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Skin Care",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Brain Section",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Sex Medication",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Advil",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Aspirin",
                 ),
               ],
             ),
           ),
           const Divider(),
-          const Text("Best Products", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-          
-            const Text("See all", style: TextStyle(fontSize: 18 , fontWeight: FontWeight.bold)
-          
-          ),
+           Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  const Text("See all", style: TextStyle(fontSize: 15)),
+                ],
+              ),
           
           SizedBox(
             height: 300,
@@ -153,33 +156,36 @@ class _HomePageState extends State<Homepage2> {
                 myPanadolCard(
 
                  
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Panadol 500 mg",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Paracetamol 500 mg",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Vyndaqel 20 mg",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Onpattro",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Excedrin",
                 ),
               ],
             ),
           ),
           const Divider(),
-          const Text("Almost finished", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const Text("See all", style: TextStyle(fontSize: 18 , fontWeight: FontWeight.bold)
-          
-          ),
+           Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                  const Text("See all", style: TextStyle(fontSize: 15)),
+                ],
+              ),
           SizedBox(
             height: 300,
             child: ListView(
@@ -187,23 +193,23 @@ class _HomePageState extends State<Homepage2> {
               scrollDirection: Axis.horizontal,
               children: [
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Oxlumo 94.5 mg",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Paracetamol 500 mg",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Givlaari 189 mg/ml",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Sudafed",
                 ),
                 myPanadolCard(
-                  image: "images/Illustrations/7191136_3568982.svg",
+                  image: "images/404.svg",
                   text: "Onpattro",
                 ),
               ],
