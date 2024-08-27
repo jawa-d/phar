@@ -62,6 +62,11 @@ class _BNBState extends State<BNB> {
             title: const Text("Invoices"),
             selectedColor: const Color(0xff263238),
           ),
+           SalomonBottomBarItem(
+            icon: const Icon(Icons.attach_money),
+            title: const Text("Invoices"),
+            selectedColor: const Color(0xff263238),
+          ),
         ],
       ),
       ),
