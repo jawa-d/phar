@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart'; // تأكد من استيراد الحزمة المناسبة
 import 'package:google_fonts/google_fonts.dart';
+import 'package:par/selispage.dart';
+
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class Store extends StatefulWidget {
@@ -33,7 +35,7 @@ class _StoreState extends State<Store> {
               // Text section
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.only(left: 10,top: 20),
+                  padding: const EdgeInsets.only(left: 10, top: 20),
                   child: RichText(
                     text: const TextSpan(
                       text: "Pharmacy ",
@@ -82,29 +84,21 @@ class _StoreState extends State<Store> {
               ),
               // Image section
               Padding(
-                padding: const EdgeInsets.only(bottom: 0, right: 1 ,top: 5), // Adjust top padding to align with the text
+                padding: const EdgeInsets.only(bottom: 0, right: 1, top: 5), // Adjust top padding to align with the text
                 child: Container(
                   width: 200, // Adjust width as needed
-                  height: 200, 
-                  // Adjust height as needed
+                  height: 200, // Adjust height as needed
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                     
                       image: Svg("images/storeWelcome.svg"),
                       fit: BoxFit.cover,
-                      
-                                 // Use cover to ensure the image fills the container
+                      // Use cover to ensure the image fills the container
                     ),
                   ),
-                  
                 ),
-                
               ),
-                       
             ],
           ),
-          
-        //  const SizedBox(height: 0,), // Adjust spacing as needed
 
           // First divider
           const Divider(),
@@ -140,6 +134,13 @@ class _StoreState extends State<Store> {
               padding: const EdgeInsets.all(20),
               scrollDirection: Axis.horizontal,
               children: [
+                GestureDetector(
+                  onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Selispage()  ));},
+                  child: myPanadolCard(
+                  image: "images/21532495_6463385.svg",
+                  text: "Skin Care",
+                ), 
+                ),
                 myPanadolCard(
                   image: "images/21532495_6463385.svg",
                   text: "Skin Care",
@@ -278,63 +279,64 @@ class _StoreState extends State<Store> {
     );
   }
 
-  Padding myPanadolCard({required String image, required String text}) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 10),
-      child: Column(
-        children: [
-          Container(
-            height: 180,
-            width: 180,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(20),
-                topRight: Radius.circular(20),
-              ),
-              image: DecorationImage(
-                image: Svg(image), // Assuming `image` is an SVG
-                fit: BoxFit.cover,
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.7),
-                  blurRadius: 7,
-                  spreadRadius: 1,
-                ),
-              ],
+ Padding myPanadolCard({required String image, required String text}) {
+  return Padding(
+    padding: const EdgeInsets.only(top: 10, left: 10),
+    child: Column(
+      children: [
+        Container(
+          height: 180,
+          width: 180,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
             ),
+            image: DecorationImage(
+              image: Svg(image), // Assuming `image` is an SVG
+              fit: BoxFit.cover,
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.7),
+                blurRadius: 7,
+                spreadRadius: 1,
+              ),
+            ],
           ),
-          Container(
-            height: 50,
-            width: 180,
-            decoration: BoxDecoration(
-              color: const Color(0xff263238),
-              borderRadius: BorderRadius.only(
-                bottomLeft: Radius.circular(20),
-                bottomRight: Radius.circular(20),
-              ),
-              border: Border(
-                right: BorderSide(
-                  color: Colors.red,
-                  width: 3.0,
-                ),
-                bottom: BorderSide(
-                  color: Colors.red,
-                  width: 3.0,
-                ),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.grey.withOpacity(0.6),
-                  blurRadius: 3,
-                  spreadRadius: 1,
-                  offset: const Offset(0.0, 5),
-                ),
-              ],
+        ),
+        Container(
+          width: 180, // Keep the width same as image container
+          decoration: BoxDecoration(
+            color: const Color(0xff263238),
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(20),
+              bottomRight: Radius.circular(20),
             ),
-            child: Center(
-              child: Text(
+            border: Border(
+              right: BorderSide(
+                color: Colors.red,
+                width: 3.0,
+              ),
+              bottom: BorderSide(
+                color: Colors.red,
+                width: 3.0,
+              ),
+            ),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.6),
+                blurRadius: 3,
+                spreadRadius: 1,
+                offset: const Offset(0.0, 5),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
                 text,
                 style: const TextStyle(
                   color: Colors.white,
@@ -342,10 +344,39 @@ class _StoreState extends State<Store> {
                   fontSize: 18,
                 ),
               ),
-            ),
+              const SizedBox(height: 8), // Add space between text and button
+              Transform.translate(
+                offset: const Offset(0, -8), // Move the button 8 pixels up
+                child: ElevatedButton(
+                  onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const Selispage(),
+                    ),
+                  );
+                },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red, // Background color of the button
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Adjust button padding
+                  ),
+                  child: const Text(
+                    'Buy Now',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ],
-      ),
-    );
-  }
+        ),
+      ],
+    ),
+  );
+}
+
 }
