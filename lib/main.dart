@@ -4,6 +4,7 @@ import 'package:par/BNBdev.dart';
 import 'package:par/HomeScreen.dart';
 import 'package:par/Homepage.dart';
 import 'package:par/Homepage2.dart';
+import 'package:par/Inventory.dart';
 import 'package:par/Login2.dart';
 import 'package:par/Signup.dart';
 import 'package:par/Simple%20Onboarding.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 debugShowCheckedModeBanner: false,
 
-home:Store(),
+home:Inventory(),
 
     );
 

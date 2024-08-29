@@ -37,7 +37,7 @@ class _InventoryState extends State<Inventory> {
                   padding: const EdgeInsets.only(left: 10, top: 20),
                   child: RichText(
                     text: const TextSpan(
-                      text: "Pharmacy ",
+                      text: "Medicine ",
                       style: TextStyle(
                         fontSize: 27,
                         fontWeight: FontWeight.bold,
@@ -45,7 +45,7 @@ class _InventoryState extends State<Inventory> {
                       ),
                       children: [
                         TextSpan(
-                          text: "Haven\n\n",
+                          text: "inventory\n\n",
                           style: TextStyle(
                             fontSize: 27,
                             fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class _InventoryState extends State<Inventory> {
                           ),
                         ),
                         TextSpan(
-                          text: "Your Trusted Health,\n",
+                          text: "Track, Manage, and,\n",
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
@@ -61,21 +61,14 @@ class _InventoryState extends State<Inventory> {
                           ),
                         ),
                         TextSpan(
-                          text: "Source, Anytime,\n",
+                          text: "Reorder Easily.,\n",
                           style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(119, 63, 42, 42),
                           ),
                         ),
-                        TextSpan(
-                          text: "Anywhere",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(119, 63, 42, 42),
-                          ),
-                        ),
+                      
                       ],
                     ),
                   ),
@@ -89,7 +82,7 @@ class _InventoryState extends State<Inventory> {
                   height: 200, // Adjust height as needed
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: Svg("images/storeWelcome.svg"),
+                      image: Svg("images/inventoryWelcome.svg"),
                       fit: BoxFit.cover,
                       // Use cover to ensure the image fills the container
                     ),
@@ -346,29 +339,7 @@ class _InventoryState extends State<Inventory> {
               const SizedBox(height: 8), // Add space between text and button
               Transform.translate(
                 offset: const Offset(0, -8), // Move the button 8 pixels up
-                child: ElevatedButton(
-                  onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const Selispage(),
-                    ),
-                  );
-                },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red, // Background color of the button
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10), // Adjust button padding
-                  ),
-                  child: const Text(
-                    'Buy Now',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
+               
               ),
             ],
           ),
