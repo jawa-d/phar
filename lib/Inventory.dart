@@ -2,21 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart'; // تأكد من استيراد الحزمة المناسبة
 import 'package:google_fonts/google_fonts.dart';
 import 'package:par/selispage.dart';
-
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
 class Inventory extends StatefulWidget {
   const Inventory({super.key});
 
   @override
   State<Inventory> createState() => _InventoryState();
-  
 }
 
 class _InventoryState extends State<Inventory> {
-   var _currentIndex = 0;
+  var _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text("Pharmacy", style: GoogleFonts.lato()),
         actions: const [Icon(Icons.shopping_cart_outlined)],
@@ -29,7 +29,7 @@ class _InventoryState extends State<Inventory> {
           // Row to place image and text in a horizontal line
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start, // Align items at the start
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Text section
               Expanded(
@@ -39,6 +39,7 @@ class _InventoryState extends State<Inventory> {
                     text: const TextSpan(
                       text: "Medicine ",
                       style: TextStyle(
+                        height: 0,
                         fontSize: 27,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -47,6 +48,7 @@ class _InventoryState extends State<Inventory> {
                         TextSpan(
                           text: "inventory\n\n",
                           style: TextStyle(
+                            height: 0,
                             fontSize: 27,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(255, 255, 21, 0),
@@ -55,7 +57,7 @@ class _InventoryState extends State<Inventory> {
                         TextSpan(
                           text: "Track, Manage, and,\n",
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(119, 63, 42, 42),
                           ),
@@ -63,12 +65,11 @@ class _InventoryState extends State<Inventory> {
                         TextSpan(
                           text: "Reorder Easily.,\n",
                           style: TextStyle(
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Color.fromARGB(119, 63, 42, 42),
                           ),
                         ),
-                      
                       ],
                     ),
                   ),
@@ -76,38 +77,58 @@ class _InventoryState extends State<Inventory> {
               ),
               // Image section
               Padding(
-                padding: const EdgeInsets.only(bottom: 0, right: 1, top: 5), // Adjust top padding to align with the text
+                padding: const EdgeInsets.only(bottom: 0, right: 1, top: 5),
                 child: Container(
-                  width: 200, // Adjust width as needed
-                  height: 200, // Adjust height as needed
+                  width: 200,
+                  height: 200,
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: Svg("images/inventoryWelcome.svg"),
                       fit: BoxFit.cover,
-                      // Use cover to ensure the image fills the container
                     ),
                   ),
                 ),
               ),
             ],
           ),
-
-          // First divider
           const Divider(),
-          const SizedBox(height: 10), // Add the search bar
+          const SizedBox(height: 10),
+          // Add the search bar with button
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search...',
-                prefixIcon: Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-                  borderSide: BorderSide.none,
+            child: Row(
+              children: [
+                Expanded(
+                  child: TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search...',
+                      prefixIcon: Icon(Icons.search),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15),
+                        borderSide: BorderSide.none,
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                    ),
+                  ),
                 ),
-                filled: true,
-                fillColor: Colors.grey[200],
-              ),
+                const SizedBox(width: 10),
+                ElevatedButton(
+                  onPressed: () {
+                    // Define your action here
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 255, 21, 0),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                  ),
+                  child: const Text(
+                    "Add item",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
             ),
           ),
           const SizedBox(height: 10),
@@ -116,8 +137,14 @@ class _InventoryState extends State<Inventory> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-              const Text("See all", style: TextStyle(fontSize: 15)),
+              const Text(
+                "Categories",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                "See all",
+                style: TextStyle(fontSize: 15),
+              ),
             ],
           ),
           SizedBox(
@@ -127,11 +154,17 @@ class _InventoryState extends State<Inventory> {
               scrollDirection: Axis.horizontal,
               children: [
                 GestureDetector(
-                  onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Selispage()  ));},
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const Selispage(),
+                      ),
+                    );
+                  },
                   child: myPanadolCard(
-                  image: "images/21532495_6463385.svg",
-                  text: "Skin Care",
-                ), 
+                    image: "images/21532495_6463385.svg",
+                    text: "Skin Care,",
+                  ),
                 ),
                 myPanadolCard(
                   image: "images/21532495_6463385.svg",
@@ -158,13 +191,18 @@ class _InventoryState extends State<Inventory> {
           ),
           const Divider(),
           const SizedBox(height: 20),
-
           // Best Seller section
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text("Best Seller", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-              const Text("See all", style: TextStyle(fontSize: 15)),
+              const Text(
+                "Best Seller",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                "See all",
+                style: TextStyle(fontSize: 15),
+              ),
             ],
           ),
           SizedBox(
@@ -174,12 +212,12 @@ class _InventoryState extends State<Inventory> {
               scrollDirection: Axis.horizontal,
               children: [
                 myPanadolCard(
-                  image: "images/Tropex.jpg",
-                  text: "Panadol 500 mg",
+                  image: "images/7230627_3588966.svg",
+                  text: "Aspirin",
                 ),
-                myPanadolCard(
-                  image: "images/shopping-bag.png",
-                  text: "Paracetamol 500 mg",
+            myPanadolCard(
+                  image: "images/NoResult.svg",
+                  text: "Givlaari 189 mg/ml",
                 ),
                 myPanadolCard(
                   image: "images/NoResult.svg",
@@ -193,16 +231,27 @@ class _InventoryState extends State<Inventory> {
                   image: "images/NoResult.svg",
                   text: "Excedrin",
                 ),
+                 myPanadolCard(
+                  image: "images/7230627_3588966.svg",
+                  text: "Aspirin",
+                ),
               ],
             ),
           ),
           const Divider(),
-          const SizedBox(height: 20), // Almost finished section
+          const SizedBox(height: 20),
+          // Almost finished section
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Text("Almost finished", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-              const Text("See all", style: TextStyle(fontSize: 15)),
+              const Text(
+                "Almost finished",
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                "See all",
+                style: TextStyle(fontSize: 15),
+              ),
             ],
           ),
           SizedBox(
@@ -215,9 +264,9 @@ class _InventoryState extends State<Inventory> {
                   image: "images/NoResult.svg",
                   text: "Oxlumo 94.5 mg",
                 ),
-                myPanadolCard(
+               myPanadolCard(
                   image: "images/NoResult.svg",
-                  text: "Paracetamol 500 mg",
+                  text: "Givlaari 189 mg/ml",
                 ),
                 myPanadolCard(
                   image: "images/NoResult.svg",
@@ -230,6 +279,10 @@ class _InventoryState extends State<Inventory> {
                 myPanadolCard(
                   image: "images/NoResult.svg",
                   text: "Onpattro",
+                ),
+                 myPanadolCard(
+                  image: "images/7230627_3588966.svg",
+                  text: "Aspirin",
                 ),
               ],
             ),
@@ -261,92 +314,137 @@ class _InventoryState extends State<Inventory> {
             title: const Text("Inventory"),
             selectedColor: const Color.fromARGB(255, 232, 80, 91),
           ),
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.attach_money),
-            title: const Text("Invoices"),
-            selectedColor: const Color(0xff263238),
-          ),
         ],
       ),
     );
   }
+}
 
- Padding myPanadolCard({required String image, required String text}) {
+// Function to create a card widget for medicines
+Padding myPanadolCard({required String image, required String text}) {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 30),
-    child: Column(
-      children: [
-        Container(
-          height: 180,
-          width: 180,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(20),
-              topRight: Radius.circular(20),
-            ),
-            image: DecorationImage(
-              image: Svg(image), // Assuming `image` is an SVG
-              fit: BoxFit.cover,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.7),
-                blurRadius: 7,
-                spreadRadius: 1,
-              ),
-            ],
+    child: Container(
+      width: 180,
+      height: 180,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        // إزالة shadow تمامًا
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.7),
+            blurRadius: 7,
+            spreadRadius: 1,
           ),
-        ),
-        Container(
-          width: 180, // Keep the width same as image container
-          decoration: BoxDecoration(
-            color: const Color(0xff263238),
-            borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
+        ],
+      ),
+      child: Column(
+        children: [
+          Container(
+            height: 150,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(20),
+                topRight: Radius.circular(20),
+              ),
+              image: DecorationImage(
+                image: Svg(image),
+                fit: BoxFit.cover,
+              ),
             ),
-            border: Border(
-              right: BorderSide(
-                color: Colors.red,
-                width: 3.0,
-              ),
-              bottom: BorderSide(
-                color: Colors.red,
-                width: 3.0,
-              ),
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.withOpacity(0.6),
-                blurRadius: 3,
-                spreadRadius: 1,
-                offset: const Offset(0.0, 5),
-              ),
-            ],
           ),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                text,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(8.0),
+            decoration: BoxDecoration(
+              color: const Color(0xff263238),
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(20),
+                bottomRight: Radius.circular(20),
+              ),
+              border: Border(
+                right: BorderSide(
+                  color: Colors.red,
+                  width: 3.0,
+                ),
+                bottom: BorderSide(
+                  color: Colors.red,
+                  width: 3.0,
                 ),
               ),
-              const SizedBox(height: 8), // Add space between text and button
-              Transform.translate(
-                offset: const Offset(0, -8), // Move the button 8 pixels up
-               
-              ),
-            ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Text(
+                  text,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 0),
+                SizedBox(
+                  height: 25,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Text 1",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                      VerticalDivider(
+                        color: Colors.red,
+                        thickness: 2,
+                        width: 20,
+                      ),
+                      Text(
+                        "Text 2",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 5),
+                SizedBox(
+                  height: 25,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Text(
+                        "Text 3",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                      Text(
+                        "Text 4",
+                        style: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-      ],
+        ],
+      ),
     ),
   );
 }
 
-}
+
