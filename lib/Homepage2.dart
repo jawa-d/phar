@@ -254,7 +254,7 @@ class _HomePageState extends State<Homepage2> {
 
   Padding myPanadolCard({required String image, required String text}) {
     return Padding(
-      padding: const EdgeInsets.only(top: 10, left: 10),
+      padding: const EdgeInsets.only(top: 10, left: 30),
       child: Column(
         children: [
           Container(

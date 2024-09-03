@@ -9,6 +9,7 @@ import 'package:par/Login2.dart';
 import 'package:par/Signup.dart';
 import 'package:par/Simple%20Onboarding.dart';
 import 'package:par/Store.dart';
+import 'package:par/Test.dart';
 
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 debugShowCheckedModeBanner: false,
 
-home:Inventory(),
+home:HomeScreen(),
 
     );
 

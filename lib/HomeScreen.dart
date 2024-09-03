@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color.fromARGB(141, 55, 195, 255),
+        backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         title: Text('Home Screen'),
         centerTitle: true,
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen>
             ScaleTransition(
               scale: _animation,
               child: Image(
-                image: Svg("images/Illustrations/7191136_3568982.svg"),
+                image: Svg("images/21724030_6506710.svg"),
                 width: 300,
                 height: 300,
               ),
