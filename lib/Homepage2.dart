@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:par/Inventory.dart';
+import 'package:par/Store.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class Homepage2 extends StatefulWidget {
@@ -12,6 +14,22 @@ class Homepage2 extends StatefulWidget {
 
 class _HomePageState extends State<Homepage2> {
   var _currentIndex = 0;
+int _selectedindex =0;
+List<Widget> _pages = 
+[
+Homepage2(),
+Inventory(),
+Store(),
+];
+
+void _onItemTapped(int index)
+{
+  setState(()
+  {
+     _selectedindex = index ;
+
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +40,7 @@ class _HomePageState extends State<Homepage2> {
       ),
       drawer: const Drawer(),
       body: ListView(
+        
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 90),
         children: [
           Stack(
@@ -217,12 +236,14 @@ class _HomePageState extends State<Homepage2> {
           ),
         ],
       ),
+      
       bottomNavigationBar: SalomonBottomBar(
         currentIndex: _currentIndex,
         onTap: (i) => setState(() => _currentIndex = i),
         
         items: [
           SalomonBottomBarItem(
+            
             icon: const Icon(Icons.home),
             title: const Text("Home"),
             selectedColor: const Color.fromARGB(255, 232, 80, 91),
