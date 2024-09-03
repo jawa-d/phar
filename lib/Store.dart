@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart'; // تأكد من استيراد الحزمة المناسبة
 import 'package:google_fonts/google_fonts.dart';
 import 'package:par/selispage.dart';
-
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 class Store extends StatefulWidget {
@@ -18,11 +17,11 @@ class _StoreState extends State<Store> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Pharmacy", style: GoogleFonts.lato()),
-        actions: const [Icon(Icons.shopping_cart_outlined)],
-        elevation: 0,
-      ),
+      // appBar: AppBar(
+      //   title: Text("Pharmacy", style: GoogleFonts.lato()),
+      //   actions: const [Icon(Icons.shopping_cart_outlined)],
+      //   elevation: 0,
+      // ),
       drawer: const Drawer(),
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
@@ -245,37 +244,37 @@ class _StoreState extends State<Store> {
           const SizedBox(height: 20),
         ],
       ),
-      bottomNavigationBar: SalomonBottomBar(
-        currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
-        items: [
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.home),
-            title: const Text("Home"),
-            selectedColor: const Color.fromARGB(255, 232, 80, 91),
-          ),
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.store_mall_directory_outlined),
-            title: const Text("Store"),
-            selectedColor: const Color.fromARGB(255, 232, 80, 91),
-          ),
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.qr_code_scanner_rounded),
-            title: const Text("QR"),
-            selectedColor: const Color.fromARGB(255, 232, 80, 91),
-          ),
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.inventory_sharp),
-            title: const Text("Inventory"),
-            selectedColor: const Color.fromARGB(255, 232, 80, 91),
-          ),
-          SalomonBottomBarItem(
-            icon: const Icon(Icons.attach_money),
-            title: const Text("Invoices"),
-            selectedColor: const Color(0xff263238),
-          ),
-        ],
-      ),
+      // bottomNavigationBar: SalomonBottomBar(
+      //   currentIndex: _currentIndex,
+      //   onTap: (i) => setState(() => _currentIndex = i),
+      //   items: [
+      //     SalomonBottomBarItem(
+      //       icon: const Icon(Icons.home),
+      //       title: const Text("Home"),
+      //       selectedColor: const Color.fromARGB(255, 232, 80, 91),
+      //     ),
+      //     SalomonBottomBarItem(
+      //       icon: const Icon(Icons.store_mall_directory_outlined),
+      //       title: const Text("Store"),
+      //       selectedColor: const Color.fromARGB(255, 232, 80, 91),
+      //     ),
+      //     SalomonBottomBarItem(
+      //       icon: const Icon(Icons.qr_code_scanner_rounded),
+      //       title: const Text("QR"),
+      //       selectedColor: const Color.fromARGB(255, 232, 80, 91),
+      //     ),
+      //     SalomonBottomBarItem(
+      //       icon: const Icon(Icons.inventory_sharp),
+      //       title: const Text("Inventory"),
+      //       selectedColor: const Color.fromARGB(255, 232, 80, 91),
+      //     ),
+      //     SalomonBottomBarItem(
+      //       icon: const Icon(Icons.attach_money),
+      //       title: const Text("Invoices"),
+      //       selectedColor: const Color(0xff263238),
+      //     ),
+      //   ],
+      // ),
     );
   }
 

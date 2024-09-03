@@ -14,22 +14,20 @@ class Homepage2 extends StatefulWidget {
 
 class _HomePageState extends State<Homepage2> {
   var _currentIndex = 0;
-int _selectedindex =0;
-List<Widget> _pages = 
-[
-Homepage2(),
-Inventory(),
-Store(),
-];
 
-void _onItemTapped(int index)
-{
-  setState(()
-  {
-     _selectedindex = index ;
+  // Define the pages you want to navigate to
+  final List<Widget> _pages = [
+    Homepage2Content(),
+    Store(),
+    Inventory(),
+    // Add other pages here if needed
+  ];
 
-  });
-}
+  void _onItemTapped(int index) {
+    setState(() {
+      _currentIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,211 +37,12 @@ void _onItemTapped(int index)
         actions: const [Icon(Icons.shopping_cart_outlined)],
       ),
       drawer: const Drawer(),
-      body: ListView(
-        
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 90),
-        children: [
-          Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Container(
-                height: MediaQuery.of(context).size.height / 3,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xff263238),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, top: 60),
-                  child: RichText(
-                    text: const TextSpan(
-                      text: "Welco",
-                      style: TextStyle(
-                        fontSize: 27,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                      ),
-                      children: [
-                        TextSpan(
-                          text: "me\n\n",
-                          style: TextStyle(
-                            fontSize: 27,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.red,
-                          ),
-                        ),
-                        TextSpan(
-                          text: " Spreading Health,\n ",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "One ",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "Smile ",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.red,
-                          ),
-                        ),
-                        TextSpan(
-                          text: "at a Time ",
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              const Positioned(
-                top: -150,
-                right: 0,
-                child: Image(
-                  width: 370,
-                  height: 450,
-                  image: Svg("images/13955738_5416078.svg"),
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                  const Text("See all", style: TextStyle(fontSize: 15)),
-                ],
-              ),
-          SizedBox(
-            height: 300,
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              scrollDirection: Axis.horizontal,
-              children: [
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Skin Care",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Brain Section",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Sex Medication",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Advil",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Aspirin",
-                ),
-              ],
-            ),
-          ),
-          const Divider(),
-           Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                  const Text("See all", style: TextStyle(fontSize: 15)),
-                ],
-              ),
-          
-          SizedBox(
-            height: 300,
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              scrollDirection: Axis.horizontal,
-              children: [
-                myPanadolCard(
-
-                 
-                  image: "images/404.svg",
-                  text: "Panadol 500 mg",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Paracetamol 500 mg",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Vyndaqel 20 mg",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Onpattro",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Excedrin",
-                ),
-              ],
-            ),
-          ),
-          const Divider(),
-           Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                  const Text("See all", style: TextStyle(fontSize: 15)),
-                ],
-              ),
-          SizedBox(
-            height: 300,
-            child: ListView(
-              padding: const EdgeInsets.all(20),
-              scrollDirection: Axis.horizontal,
-              children: [
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Oxlumo 94.5 mg",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Paracetamol 500 mg",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Givlaari 189 mg/ml",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Sudafed",
-                ),
-                myPanadolCard(
-                  image: "images/404.svg",
-                  text: "Onpattro",
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-      
+      body: _pages[_currentIndex], // Display the current page based on _currentIndex
       bottomNavigationBar: SalomonBottomBar(
         currentIndex: _currentIndex,
-        onTap: (i) => setState(() => _currentIndex = i),
-        
+        onTap: _onItemTapped,
         items: [
           SalomonBottomBarItem(
-            
             icon: const Icon(Icons.home),
             title: const Text("Home"),
             selectedColor: const Color.fromARGB(255, 232, 80, 91),
@@ -270,6 +69,208 @@ void _onItemTapped(int index)
           ),
         ],
       ),
+    );
+  }
+}
+
+// Extract the content of the Homepage2 into a separate widget
+class Homepage2Content extends StatelessWidget {
+  const Homepage2Content({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 90),
+      children: [
+        Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Container(
+              height: MediaQuery.of(context).size.height / 3,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: const Color(0xff263238),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, top: 60),
+                child: RichText(
+                  text: const TextSpan(
+                    text: "Welco",
+                    style: TextStyle(
+                      fontSize: 27,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "me\n\n",
+                        style: TextStyle(
+                          fontSize: 27,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                        ),
+                      ),
+                      TextSpan(
+                        text: " Spreading Health,\n ",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "One ",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "Smile ",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.red,
+                        ),
+                      ),
+                      TextSpan(
+                        text: "at a Time ",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+            const Positioned(
+              top: -150,
+              right: 0,
+              child: Image(
+                width: 370,
+                height: 450,
+                image: Svg("images/13955738_5416078.svg"),
+              ),
+            ),
+          ],
+        ),
+        const SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            const Text("See all", style: TextStyle(fontSize: 15)),
+          ],
+        ),
+        SizedBox(
+          height: 300,
+          child: ListView(
+            padding: const EdgeInsets.all(20),
+            scrollDirection: Axis.horizontal,
+            children: [
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Skin Care",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Brain Section",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Sex Medication",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Advil",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Aspirin",
+              ),
+            ],
+          ),
+        ),
+        const Divider(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            const Text("See all", style: TextStyle(fontSize: 15)),
+          ],
+        ),
+        SizedBox(
+          height: 300,
+          child: ListView(
+            padding: const EdgeInsets.all(20),
+            scrollDirection: Axis.horizontal,
+            children: [
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Panadol 500 mg",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Paracetamol 500 mg",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Vyndaqel 20 mg",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Excedrin",
+              ),
+            ],
+          ),
+        ),
+        const Divider(),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            const Text("See all", style: TextStyle(fontSize: 15)),
+          ],
+        ),
+        SizedBox(
+          height: 300,
+          child: ListView(
+            padding: const EdgeInsets.all(20),
+            scrollDirection: Axis.horizontal,
+            children: [
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Oxlumo 94.5 mg",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Paracetamol 500 mg",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Givlaari 189 mg/ml",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Sudafed",
+              ),
+              myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 
