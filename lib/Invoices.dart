@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 
 class Invoices extends StatelessWidget {
   @override
@@ -28,14 +29,78 @@ class PharmacyScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // العنوان
-            Text(
-              'Medication Cart',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                // Image section
+                Container(
+                  width: 200, // Adjust width as needed
+                  height: 200, // Adjust height as needed
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: Svg("images/addProduct.svg"),
+                      
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+                
+                SizedBox(width: 80),
+              
+                 // Add space between image and text
+                // Text section
+                Expanded(
+                  child: RichText(
+                    text: const TextSpan(
+                      text: "Medication ",
+                      style: TextStyle(
+                        fontSize: 27,
+                        fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      children: [
+                        TextSpan(
+                          text: "Cart\n",
+                          style: TextStyle(
+                            fontSize: 27,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 255, 21, 0),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Streamlined Prescription,\n",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(119, 63, 42, 42),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Checkout & Medication,\n",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(119, 63, 42, 42),
+                          ),
+                        ),
+                        TextSpan(
+                          text: "Review",
+                          style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(119, 63, 42, 42),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  
+                ),
+               
+              ],
             ),
-            Text('Streamlined Prescription Checkout & Medication Review'),
+            const Divider(),
             SizedBox(height: 20),
-            // شريط البحث
             TextField(
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.search),
@@ -46,6 +111,7 @@ class PharmacyScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
+            const Divider(),
             // قائمة الفواتير
             Text(
               'Invoices',
@@ -95,7 +161,7 @@ class PharmacyScreen extends StatelessWidget {
                               color: Colors.black,
                             ),
                           ),
-                          SizedBox(height: 13), // المسافة بين الكلمة والسعر
+                          SizedBox(height: 11), // المسافة بين الكلمة والسعر
                           Text(
                             '85,000 IQD',
                             style: TextStyle(

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:par/Inventory.dart';
-import 'package:par/Store.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
+
+// استيراد الملفات الخاصة بالصفحات الأخرى
+import 'package:par/Inventory.dart';
+import 'package:par/Invoices.dart';
+import 'package:par/QRcode.dart';
+import 'package:par/Store.dart';
 
 class Homepage2 extends StatefulWidget {
   const Homepage2({super.key});
@@ -13,20 +17,26 @@ class Homepage2 extends StatefulWidget {
 }
 
 class _HomePageState extends State<Homepage2> {
-  var _currentIndex = 0;
+  int _currentIndex = 0;
 
   // Define the pages you want to navigate to
   final List<Widget> _pages = [
     Homepage2Content(),
     Store(),
+    Qrcode(),
     Inventory(),
-    // Add other pages here if needed
+    Invoices(),
   ];
 
   void _onItemTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
+    if (index >= 0 && index < _pages.length) {
+      setState(() {
+        _currentIndex = index;
+      });
+    } else {
+      // Handle the case where the index is out of range
+      print("Index out of range: $index");
+    }
   }
 
   @override
@@ -37,7 +47,7 @@ class _HomePageState extends State<Homepage2> {
         actions: const [Icon(Icons.shopping_cart_outlined)],
       ),
       drawer: const Drawer(),
-      body: _pages[_currentIndex], // Display the current page based on _currentIndex
+      body: _pages.isNotEmpty ? _pages[_currentIndex] : Center(child: Text('No pages available')), // Handle empty _pages list
       bottomNavigationBar: SalomonBottomBar(
         currentIndex: _currentIndex,
         onTap: _onItemTapped,
@@ -154,7 +164,7 @@ class Homepage2Content extends StatelessWidget {
               child: Image(
                 width: 370,
                 height: 450,
-                image: Svg("images/13955738_5416078.svg"),
+                image: Svg("images/13955738_5416078.svg"), // Update to AssetImage if it's an SVG
               ),
             ),
           ],
@@ -178,7 +188,7 @@ class Homepage2Content extends StatelessWidget {
                 text: "Skin Care",
               ),
               myPanadolCard(
-                image: "images/404.svg",
+                image: "images/8412809_3907182.svg",
                 text: "Brain Section",
               ),
               myPanadolCard(
@@ -289,7 +299,7 @@ class Homepage2Content extends StatelessWidget {
                 topRight: Radius.circular(20),
               ),
               image: DecorationImage(
-                image: Svg(image),
+                image: AssetImage(image), // Update to AssetImage if it's an SVG
                 fit: BoxFit.cover,
               ),
               boxShadow: [
