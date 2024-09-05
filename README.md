@@ -1,5 +1,5 @@
 # phar
-
+✅
 A new Flutter project.
 
 ## Getting Started
