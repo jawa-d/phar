@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-
-
 class Medicine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -36,9 +34,10 @@ class ProductPage extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.pink[50],
-                border: Border.all(color: Colors.pink, width: 2),
-                borderRadius: BorderRadius.only(
+                color: const Color.fromARGB(255, 38, 50, 56),
+
+                border: Border.all(color: const Color.fromARGB(255, 38, 50, 56), width: 2),
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
                 ),
@@ -47,30 +46,31 @@ class ProductPage extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Cathy Doll Splash Essence with ',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween, // تجعل العناصر على الجهتين
                     children: [
-                      Text(
-                        "5000",
-                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      const Text(
+                        'Cathy Doll Splash Essence with',
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color:Colors.white54),
+                      ),
+                      const Text(
+                        "50000",
+                        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color:Colors.white54),
                       ),
                     ],
                   ),
                   SizedBox(height: 8),
-                  Text(
+                  const Text(
                     'An exceptional beauty product designed to transform your skincare routine. This innovative essence offers intense hydration and a refreshing burst of revitalization for your skin.',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(fontSize: 16,color:Colors.white54),
                   ),
                   SizedBox(height: 8),
-                  Text(
+                  const Text(
                     'Categories: Beauty & Personal Care Promo, Skin Care',
-                    style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+                    style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic, color: Colors.red),
                   ),
                   SizedBox(height: 8),
-                  Text(
+                  const Text(
                     'Current Stock: 16 pieces in stock',
                     style: TextStyle(fontSize: 16, color: Colors.red),
                   ),
@@ -78,23 +78,33 @@ class ProductPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text('Add to Bag'),
-                      ),
-                      Row(
-                        children: [
-                          IconButton(
-                            icon: Icon(Icons.remove),
-                            onPressed: () {},
-                          ),
-                          Text('1'),
-                          IconButton(
-                            icon: Icon(Icons.add),
-                            onPressed: () {},
-                          ),
-                        ],
-                      ),
+                   ElevatedButton(
+  onPressed: () {},
+  style: ElevatedButton.styleFrom(
+    backgroundColor: const Color.fromARGB(255, 255, 255, 255), // لون الخلفية
+  ),
+  child: Text(
+    'Add to Bag',
+    style: TextStyle(
+      color: const Color.fromARGB(255, 30, 50, 56), // لون النص
+    ),
+  ),
+),
+
+                     Row(
+  children: [
+    IconButton(
+      icon: Icon(Icons.remove, color: Colors.red), // لون للأيقونة
+      onPressed: () {},
+    ),
+    Text('1'),
+    IconButton(
+      icon: Icon(Icons.add, color: Colors.red), // لون للأيقونة
+      onPressed: () {},
+    ),
+  ],
+)
+
                     ],
                   ),
                 ],

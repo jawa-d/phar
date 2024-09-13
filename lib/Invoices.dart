@@ -141,7 +141,7 @@ class PharmacyScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      title: Column(
+                      title: const Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text('Invoice as'),
@@ -151,7 +151,7 @@ class PharmacyScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      trailing: Column(
+                      trailing: const Column(
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: [
                           Text(
