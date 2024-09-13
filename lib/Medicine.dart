@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 
 
@@ -20,19 +21,13 @@ class ProductPage extends StatelessWidget {
       ),
       body: Stack(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Center(
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.5,
-                height: MediaQuery.of(context).size.width * 0.5,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage('https://example.com/product_image.png'), // رابط صورة المنتج
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
+          Align(
+            alignment: Alignment.topCenter,
+            child: SvgPicture.asset(
+              'images/homeWelcome.svg', // رابط صورة SVG
+              width: MediaQuery.of(context).size.width * 0.4,
+              height: MediaQuery.of(context).size.width * 0.5,
+              fit: BoxFit.cover,
             ),
           ),
           Align(
@@ -41,11 +36,11 @@ class ProductPage extends StatelessWidget {
               width: double.infinity,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: const Color.fromARGB(255, 91, 55, 67),
+                color: Colors.pink[50],
                 border: Border.all(color: Colors.pink, width: 2),
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(18),
-                  topRight: Radius.circular(18),
+                  topLeft: Radius.circular(16),
+                  topRight: Radius.circular(16),
                 ),
               ),
               child: Column(
