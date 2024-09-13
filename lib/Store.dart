@@ -133,33 +133,45 @@ class _StoreState extends State<Store> {
               padding: const EdgeInsets.all(20),
               scrollDirection: Axis.horizontal,
               children: [
-                GestureDetector(
-                  onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Selispage()  ));},
-                  child: myPanadolCard(
-                  image: "images/21532495_6463385.svg",
-                  text: "Skin Care",
-                ), 
-                ),
-                myPanadolCard(
-                  image: "images/21532495_6463385.svg",
-                  text: "Skin Care",
-                ),
-                myPanadolCard(
-                  image: "images/18407478_5995227.svg",
-                  text: "Brain Section",
-                ),
-                myPanadolCard(
-                  image: "images/15577656_5642613.svg",
-                  text: "Sex Medication",
-                ),
-                myPanadolCard(
-                  image: "images/13955738_5416078.svg",
-                  text: "Advil",
-                ),
-                myPanadolCard(
-                  image: "images/7230627_3588966.svg",
-                  text: "Aspirin",
-                ),
+                // GestureDetector(
+                //   onTap: (){Navigator.of(context).push(MaterialPageRoute(builder: (context)=> Selispage(name: 'jawad', price: 2000, image: 'images/7191136_3568982.svg',)  ));},
+                //   child: myPanadolCard(
+                //   image: "images/21532495_6463385.svg",
+                //   text: "Skin Care",
+                // ), 
+                // ),
+             myPanadolCard(
+  image: "images/21532495_6463385.svg",
+  text: "jawad",
+  name: "kadhim",
+  price: 200.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
+
+               myPanadolCard(
+  image: "images/21532495_6463385.svg",
+  text: "Skin Care",
+  name: "Skin Care Product",
+  price: 200.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "medo",
+  name: "Brain ",
+  price: 3333.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "abd",
+  name: "Brain Medication",
+  price: 44444.0,
+),
+
               ],
             ),
           ),
@@ -180,26 +192,37 @@ class _StoreState extends State<Store> {
               padding: const EdgeInsets.all(20),
               scrollDirection: Axis.horizontal,
               children: [
-                myPanadolCard(
-                  image: "images/Tropex.jpg",
-                  text: "Panadol 500 mg",
-                ),
-                myPanadolCard(
-                  image: "images/shopping-bag.png",
-                  text: "Paracetamol 500 mg",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Vyndaqel 20 mg",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Onpattro",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Excedrin",
-                ),
+                     myPanadolCard(
+  image: "images/21532495_6463385.svg",
+  text: "Skin Care",
+  name: "Skin Care Product",
+  price: 200.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
+
+               myPanadolCard(
+  image: "images/21532495_6463385.svg",
+  text: "Skin Care",
+  name: "Skin Care Product",
+  price: 200.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
               ],
             ),
           ),
@@ -218,26 +241,37 @@ class _StoreState extends State<Store> {
               padding: const EdgeInsets.all(20),
               scrollDirection: Axis.horizontal,
               children: [
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Oxlumo 94.5 mg",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Paracetamol 500 mg",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Givlaari 189 mg/ml",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Sudafed",
-                ),
-                myPanadolCard(
-                  image: "images/NoResult.svg",
-                  text: "Onpattro",
-                ),
+                       myPanadolCard(
+  image: "images/21532495_6463385.svg",
+  text: "Skin Care",
+  name: "Skin Care Product",
+  price: 200.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
+
+               myPanadolCard(
+  image: "images/21532495_6463385.svg",
+  text: "Skin Care",
+  name: "Skin Care Product",
+  price: 200.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
+myPanadolCard(
+  image: "images/18407478_5995227.svg",
+  text: "Brain Section",
+  name: "Brain Medication",
+  price: 500.0,
+),
               ],
             ),
           ),
@@ -278,7 +312,7 @@ class _StoreState extends State<Store> {
     );
   }
 
- Padding myPanadolCard({required String image, required String text}) {
+ Padding myPanadolCard({required String image, required String text, required String name, required double price}) {
   return Padding(
     padding: const EdgeInsets.only(top: 10, left: 30),
     child: Column(
@@ -288,7 +322,7 @@ class _StoreState extends State<Store> {
           width: 180,
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20),
               topRight: Radius.circular(20),
             ),
@@ -309,11 +343,11 @@ class _StoreState extends State<Store> {
           width: 180, // Keep the width same as image container
           decoration: BoxDecoration(
             color: const Color(0xff263238),
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(20),
               bottomRight: Radius.circular(20),
             ),
-            border: Border(
+            border: const Border(
               right: BorderSide(
                 color: Colors.red,
                 width: 3.0,
@@ -348,12 +382,16 @@ class _StoreState extends State<Store> {
                 offset: const Offset(0, -8), // Move the button 8 pixels up
                 child: ElevatedButton(
                   onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const Selispage(),
-                    ),
-                  );
-                },
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => Selispage(
+                          name: name, // Pass the name from the card
+                          price: price, // Pass the price from the card
+                          image: image, // Pass the image from the card
+                        ),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.red, // Background color of the button
                     shape: RoundedRectangleBorder(
@@ -379,3 +417,5 @@ class _StoreState extends State<Store> {
 }
 
 }
+
+

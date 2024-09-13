@@ -157,7 +157,7 @@ class _InventoryState extends State<Inventory> {
                   onTap: () {
                     Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (context) => const Selispage(),
+                        builder: (context) =>  Selispage(name: 'ali', price: 7888, image: 'images/7191136_3568982.svg',),
                       ),
                     );
                   },

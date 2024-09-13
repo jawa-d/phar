@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 debugShowCheckedModeBanner: false,
 
-home:LoginScreen(),
+home:Cart(),
 
     );
 
