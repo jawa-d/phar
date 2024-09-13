@@ -31,6 +31,7 @@ class ProductPage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              //height: 0,
               width: double.infinity,
               padding: EdgeInsets.all(16),
               decoration: BoxDecoration(
@@ -65,6 +66,8 @@ class ProductPage extends StatelessWidget {
                     style: TextStyle(fontSize: 16,color:Colors.white54),
                   ),
                   SizedBox(height: 8),
+                  
+                   const Divider(),
                   const Text(
                     'Categories: Beauty & Personal Care Promo, Skin Care',
                     style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic, color: Colors.red),
@@ -97,7 +100,7 @@ class ProductPage extends StatelessWidget {
       icon: Icon(Icons.remove, color: Colors.red), // لون للأيقونة
       onPressed: () {},
     ),
-    Text('1'),
+    Text('1',style: TextStyle(color: Colors.amber),),
     IconButton(
       icon: Icon(Icons.add, color: Colors.red), // لون للأيقونة
       onPressed: () {},
