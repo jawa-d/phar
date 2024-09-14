@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962928421927",
+    "project_id": "phar-test-2494a",
+    "storage_bucket": "phar-test-2494a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962928421927:android:4fd1d23f08989e9821f202",
+        "android_client_info": {
+          "package_name": "AndroidManifest.xml"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvJ01vxGsVK4-ortc3E60vr7m6kWrWUFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -14,15 +14,18 @@ import 'package:par/Simple%20Onboarding.dart';
 import 'package:par/Store.dart';
 import 'package:par/Test.dart';
 import 'package:par/cart.dart';
+import 'package:par/firebase_options.dart';
 import 'package:par/loginhup.dart';
+import "package:firebase_core/firebase_core.dart";
+import 'package:firebase_auth/firebase_auth.dart';
 
-
-void main() {
-  runApp(MyApp());
-  // widget : class build by google
-  // vs class : class build by you
+Future<void> main() async 
+{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+options: DefaultFirebaseOptions.currentPlatform,
+  );
 }
-
 /// Stateless => غير تفاعلية صفحات
 /// Stateful =>  صفحات االتفاعليه
 
@@ -33,7 +36,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
 debugShowCheckedModeBanner: false,
 
-home:Medicine(),
+home:LoginScreen(),
 
     );
 
