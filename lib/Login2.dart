@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
-import 'package:par/Signup.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'Homepage.dart'; // صفحة Homepage التي سيتم تحويل المستخدم إليها بعد تسجيل الدخول
+import 'Signup.dart'; // صفحة التسجيل
 
 class LoginPage2 extends StatefulWidget {
   const LoginPage2({super.key});
@@ -13,12 +15,41 @@ class _LoginPageState extends State<LoginPage2> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _formKey = GlobalKey<FormState>();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  void _login() {
+  void _login() async {
     if (_formKey.currentState?.validate() ?? false) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Logging In')),
-      );
+      try {
+        UserCredential userCredential = await _auth.signInWithEmailAndPassword(
+          email: _emailController.text,
+          password: _passwordController.text,
+        );
+
+        User? user = userCredential.user;
+
+        if (user != null && user.emailVerified) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Login Successful')),
+          );
+
+          // تحويل المستخدم إلى الصفحة الرئيسية بعد التحقق
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const Homepage()),
+          );
+        } else if (user != null && !user.emailVerified) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Please verify your email before logging in.')),
+          );
+
+          // إرسال رسالة تحقق بالبريد الإلكتروني
+          await user.sendEmailVerification();
+        }
+      } on FirebaseAuthException catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Login Failed: ${e.message}')),
+        );
+      }
     }
   }
 
