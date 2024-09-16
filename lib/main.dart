@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:par/BNBdev.dart';
+import 'package:par/ErrorScreen.dart';
 import 'package:par/HomeScreen.dart';
 import 'package:par/Homepage.dart';
 import 'package:par/Homepage2.dart';
