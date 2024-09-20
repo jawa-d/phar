@@ -164,17 +164,17 @@ class Homepage2Content extends StatelessWidget {
               child: Image(
                 width: 370,
                 height: 450,
-                image: Svg("images/13955738_5416078.svg"), // Update to AssetImage if it's an SVG
+                image: Svg("images/homeWelcome2.svg"), // Update to AssetImage if it's an SVG
               ),
             ),
           ],
         ),
         const SizedBox(height: 20),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const Text("See all", style: TextStyle(fontSize: 15)),
+            Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text("See all", style: TextStyle(fontSize: 15)),
           ],
         ),
         SizedBox(
@@ -184,7 +184,8 @@ class Homepage2Content extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             children: [
               myPanadolCard(
-                image: "images/404.svg",
+                
+  image: "images/18407478_5995227.svg",
                 text: "Skin Care",
               ),
               myPanadolCard(
@@ -203,15 +204,23 @@ class Homepage2Content extends StatelessWidget {
                 image: "images/404.svg",
                 text: "Aspirin",
               ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
             ],
           ),
         ),
         const Divider(),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const Text("See all", style: TextStyle(fontSize: 15)),
+            Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text("See all", style: TextStyle(fontSize: 15)),
           ],
         ),
         SizedBox(
@@ -225,7 +234,7 @@ class Homepage2Content extends StatelessWidget {
                 text: "Panadol 500 mg",
               ),
               myPanadolCard(
-                image: "images/404.svg",
+                image: "images/7191136_3568982.svg",
                 text: "Paracetamol 500 mg",
               ),
               myPanadolCard(
@@ -240,15 +249,23 @@ class Homepage2Content extends StatelessWidget {
                 image: "images/404.svg",
                 text: "Excedrin",
               ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
             ],
           ),
         ),
         const Divider(),
-        Row(
+        const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-            const Text("See all", style: TextStyle(fontSize: 15)),
+            Text("Categories", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+            Text("See all", style: TextStyle(fontSize: 15)),
           ],
         ),
         SizedBox(
@@ -277,6 +294,18 @@ class Homepage2Content extends StatelessWidget {
                 image: "images/404.svg",
                 text: "Onpattro",
               ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
+                  myPanadolCard(
+                image: "images/404.svg",
+                text: "Onpattro",
+              ),
             ],
           ),
         ),
@@ -294,12 +323,12 @@ class Homepage2Content extends StatelessWidget {
             width: 180,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                 topLeft: Radius.circular(20),
                 topRight: Radius.circular(20),
               ),
               image: DecorationImage(
-                image: AssetImage(image), // Update to AssetImage if it's an SVG
+                image: Svg(image), // Update to AssetImage if it's an SVG
                 fit: BoxFit.cover,
               ),
               boxShadow: [

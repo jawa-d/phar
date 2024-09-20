@@ -15,15 +15,15 @@ class PharmacyScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Pharmacy'),
-        actions: [
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            onPressed: () {},
-          ),
-        ],
-      ),
+      // appBar: AppBar(
+      //   title: Text('Pharmacy'),
+      //   actions: [
+      //     IconButton(
+      //       icon: Icon(Icons.shopping_cart),
+      //       onPressed: () {},
+      //     ),
+      //   ],
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(

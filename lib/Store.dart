@@ -205,7 +205,7 @@ myPanadolCard(
   price: 500.0,
 ),
 
-               myPanadolCard(
+    myPanadolCard(
   image: "images/21532495_6463385.svg",
   text: "Skin Care",
   name: "Skin Care Product",

@@ -388,14 +388,14 @@ Padding myPanadolCard({required String image, required String text}) {
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 0),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Text(
                         "Text 1",
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                         ),
@@ -407,7 +407,7 @@ Padding myPanadolCard({required String image, required String text}) {
                       ),
                       Text(
                         "Text 2",
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.white,
                           fontSize: 14,
                         ),
